@@ -14,7 +14,7 @@ class Person(dj.Manual):
 
 
 @schema
-class Rig(dj.Lookup):
+class Rig(dj.Lookup): # This list will be everchanging and espanding for the lab. I don't think it should be a lookup table.
     definition = """
     rig  : varchar(16)
     ---
@@ -41,7 +41,7 @@ class Species(dj.Lookup):
 
 
 @schema
-class Strain(dj.Lookup):
+class Strain(dj.Lookup): # This list will be everchanging and espanding for the lab. I don't think it should be a lookup table.
     definition = """
     # Mouse strain
     strain : varchar(30) # mouse strain
@@ -50,7 +50,7 @@ class Strain(dj.Lookup):
 
 
 @schema
-class GeneModification(dj.Lookup):
+class GeneModification(dj.Lookup): # This list will be everchanging and espanding for the lab. I don't think it should be a lookup table.
     definition = """
     gene_modification   : varchar(60)
     """
@@ -58,7 +58,7 @@ class GeneModification(dj.Lookup):
 
 
 @schema
-class Subject(dj.Manual):
+class Subject(dj.Manual): # I prefer animal rather than subject
     definition = """
     subject_id          : int                     # institution animal ID
     ---
@@ -134,7 +134,7 @@ class Surgery(dj.Manual):
     description         : varchar(256)
     """
 
-    class VirusInjection(dj.Part):
+    class VirusInjection(dj.Part): # I am unsure if part table entry will be enforced
         definition = """
         # Virus injections
         -> Surgery
